@@ -33,9 +33,9 @@ public class UserController {
 
     @GetMapping(value = "/getUsersByThread")
     public ResponseEntity getUsersByThread(){
-        CompletableFuture<List<User>> user1 = userService.findAllUsers();
-        CompletableFuture<List<User>> user2 = userService.findAllUsers();
-        CompletableFuture<List<User>> user3 = userService.findAllUsers();
+        for(int i = 0 ; i<10; i++){
+            CompletableFuture<List<User>> user1 = userService.findAllUsers();
+        }
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
